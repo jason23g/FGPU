@@ -116,6 +116,20 @@ set path_rtl_old "${path_repository}/RTL/old"
 
 set path_rtl "${path_repository}/RTL/db"
 
+#if { $ver == "2017.2" } {
+    #set path_fpu "${path_rtl_old}/floating_point_2017.2"
+    #set path_new_fpu "${path_rtl}/../tb"
+#} elseif { $ver == "2016.2" } {
+    #set path_fpu "${path_rtl_old}/floating_point_2016.2"
+    #set path_new_fpu "${path_rtl}/../tb"
+#} elseif {$ver == "2019.2" } {
+    #set path_fpu "${path_rtl_old}/floating_point_2019.2"
+    #set path_new_fpu "${path_rtl}/../tb"
+#} else {
+    #set path_fpu "${path_rtl_old}/floating_point"
+    #set path_new_fpu "${path_rtl}/../tb"
+#}
+
 
 
 set sim_files [list \
@@ -127,6 +141,7 @@ set sim_files [list \
 	${path_rtl_old}/mult_add_sub.vhd \
 	${path_rtl_old}/regFile.vhd \
 	${path_rtl_old}/ALU.vhd \
+	${path_rtl_old}/float_units.vhd \
 	${path_rtl_old}/CV.vhd \
 	${path_rtl_old}/CU_instruction_dispatcher.vhd \
 	${path_rtl_old}/CU_scheduler.vhd \
@@ -150,6 +165,26 @@ set mif_files [list \
 	${path_rtl_old}/cram.mif \
 	${path_rtl_old}/krnl_ram.mif]
 
+# set fpu_files [list \
+#	${path_fpu}/fadd_fsub.vhd \
+#	${path_fpu}/fdiv.vhd \
+#	${path_fpu}/fmul.vhd \
+#	${path_fpu}/fsqrt.vhd \
+#	${path_fpu}/frsqrt.vhd \
+#	${path_fpu}/fslt.vhd \
+#	${path_fpu}/fsqrt.vhd \
+#	${path_fpu}/uitofp.vhd \
+#	\
+#	${path_fpu}/xbip_utils_v3_0_vh_rfs.vhd \
+#	${path_fpu}/axi_utils_v2_0_vh_rfs.vhd \
+#	${path_fpu}/xbip_pipe_v3_0_vh_rfs.vhd \
+#	${path_fpu}/mult_gen_v12_0_vh_rfs.vhd \
+#	${path_fpu}/xbip_bram18k_v3_0_6/hdl/xbip_bram18k_v3_0_vh_rfs.vhd \
+#	${path_fpu}/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd \
+#	${path_fpu}/xbip_dsp48_addsub_v3_0_vh_rfs.vhd \
+#	${path_fpu}/xbip_dsp48_multadd_v3_0_vh_rfs.vhd \
+#	${path_fpu}/floating_point_v7_1_11/hdl/floating_point_v7_1_vh_rfs.vhd]
+
 set imp_files [list \
     ${path_rtl}/fgpu_definitions_pkg.vhd \
     ${path_rtl}/fgpu_components_pkg.vhd \
@@ -160,6 +195,14 @@ set imp_files [list \
 	${path_rtl}/mult_add_sub.vhd \
 	${path_rtl}/regFile.vhd \
 	${path_rtl}/alu.vhd \
+    # ${path_new_fpu}/fadd_fsub.vhd \
+	# ${path_new_fpu}/fdiv.vhd \
+	# ${path_new_fpu}/fmul.vhd \
+	# ${path_new_fpu}/frsqrt.vhd \
+	# ${path_new_fpu}/fslt.vhd \
+	# ${path_new_fpu}/fsqrt.vhd \
+	# ${path_new_fpu}/uitofp.vhd \
+	# ${path_rtl}/float_units.vhd \
 	${path_rtl}/cu_vector.vhd \
 	${path_rtl}/cu_instruction_dispatcher.vhd \
 	${path_rtl}/cu_scheduler.vhd \

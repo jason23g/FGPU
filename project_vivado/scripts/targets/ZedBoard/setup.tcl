@@ -19,4 +19,4 @@
 ##############################################################################
 
 set project_part  xc7z020clg484-1
-set project_board em.avnet.com:zed:part0:1.3
+set project_board em.avnet.com:zed:part0:1.4

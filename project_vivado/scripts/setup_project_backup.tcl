@@ -54,6 +54,7 @@ if {${action} == "simulate"} {
 		read_mem  -verbose ${mif_files}
 	} else {
 		read_vhdl -verbose -library work -vhdl2008 ${sim_files}
+		#read_vhdl -verbose -library work ${fpu_files}
 		read_mem  -verbose ${mif_files}
 	}
 }
